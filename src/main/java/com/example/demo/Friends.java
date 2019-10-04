@@ -1,10 +1,11 @@
 package com.example.demo;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "friends")
-public class Friends {
+public class Friends implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -16,15 +17,15 @@ public class Friends {
         this.name = name;
     }
 
-    public void setId(Long id){
-        this.id = id;
-    }
-
     public String getName(){
         return this.name;
     }
 
     public Long getId(){
         return this.id;
+    }
+
+    public String toString(){
+        return this.name;
     }
 }

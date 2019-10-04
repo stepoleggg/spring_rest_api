@@ -17,7 +17,7 @@ public class FriendsService {
     }
 
     public void joinFriends(Friends friends){
-        friendsRepository.save(friends);
+        this.friendsRepository.save(friends);
     }
 
     public List<Friends> getAllFriends(){
